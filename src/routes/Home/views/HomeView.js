@@ -63,6 +63,19 @@ class HomeView extends React.Component {
                       <Button color="blue">Enter</Button>
                     </Link></Segment>
                 </Grid.Column>
+                <Grid.Column>
+                  <Segment textAlign="center" style={{border: 'none', boxShadow: 'none'}}>
+                    <Header as="h3" icon={true}>
+                      <Icon name="lab" size="large"/>
+                      Truffle
+                      <Header.Subheader>
+                        View your own contracts <br/>and interact with them.
+                      </Header.Subheader>
+                    </Header><br/>
+                    <Link to="/truffle">
+                      <Button color="blue">Enter</Button>
+                    </Link></Segment>
+                </Grid.Column>
               </Grid.Row>
             </Grid>
           </Container>

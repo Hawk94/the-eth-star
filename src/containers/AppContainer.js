@@ -1,20 +1,29 @@
-import App from "../App.js"
-import { bindActionCreators } from 'redux';
-import { actions } from '../modules/metacoin.js';
-import { connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react'
+import { browserHistory, Router } from 'react-router'
+import { Provider } from 'react-redux'
+import 'react-select/dist/react-select.css';
 
-
-function mapStateToProps(state, props) {
-  return {
-    balance: state.metacoin.balance,
-    transactions: state.metacoin.transactions
+class AppContainer extends Component {
+  static propTypes = {
+    routes : PropTypes.object.isRequired,
+    store  : PropTypes.object.isRequired
   };
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    onSubmit: ({receiver, amount}) =>
-      dispatch(actions.send(receiver, amount)),
-    ...bindActionCreators(actions, dispatch)
+
+  shouldComponentUpdate () {
+    return false
+  }
+
+  render () {
+    const { routes, store } = this.props;
+
+    return (
+      <Provider store={store}>
+        <div style={{ height: '100%' }}>
+          <Router history={browserHistory} children={routes} />
+        </div>
+      </Provider>
+    )
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default AppContainer
