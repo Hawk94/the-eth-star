@@ -63,6 +63,19 @@ class HomeView extends React.Component {
                       <Button color="blue">Enter</Button>
                     </Link></Segment>
                 </Grid.Column>
+                <Grid.Column>
+                  <Segment textAlign="center" style={{border: 'none', boxShadow: 'none'}}>
+                    <Header as="h3" icon={true}>
+                      <Icon name="lab" size="large"/>
+                      Ethereum
+                      <Header.Subheader>
+                        Interact with the blockchain <br/>and contracts on it.
+                      </Header.Subheader>
+                    </Header><br/>
+                    <Link to="/eth">
+                      <Button color="purple">Enter</Button>
+                    </Link></Segment>
+                </Grid.Column>
               </Grid.Row>
             </Grid>
           </Container>

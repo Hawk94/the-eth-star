@@ -4,6 +4,7 @@ import Home from './Home'
 import PersonalAccessRoute from './PersonalAccess'
 import OAuthRoute from './OAuth'
 import SandboxRoute from './Sandbox'
+import TestRoute from './TestAccessRoute'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -15,7 +16,8 @@ export const createRoutes = (store) => ({
   childRoutes : [
     PersonalAccessRoute(store),
     OAuthRoute(store),
-    SandboxRoute(store)
+    SandboxRoute(store),
+    TestRoute(store)
   ]
 })
 
